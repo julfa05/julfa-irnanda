@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Pribadi</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #7ba87b;
+            color: rgb(193, 178, 178);
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav {
+            margin: 10px 0;
+        }
+
+        nav a {
+            color: rgb(136, 91, 89);
+            margin: 0 15px;
+            text-decoration: none;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background: #7ba87b;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        form input, form textarea {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .project {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .project-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        h2 {
+            margin-top: 20px;
+        }
+
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+
+        #favorites audio, #favorites iframe {
+            margin-top: 10px;
+            max-width: 100%;
+        }
+
+        #contact p {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Portofolio Pribadi</h1>
+    <nav>
+        <a href="#about">Tentang Saya</a>
+        <a href="#hobbies">Hobi</a>
+        <a href="#projects">Proyek</a>
+        <a href="#contact">Kontak</a>
+    </nav>
+</header>
+
+<section id="about">
+    <h2>Tentang Saya</h2>
+    <p>Saya Julfa Irnanda Pratiwi, mahasiswa aktif Program Studi Sistem Informasi di Universitas Internasional Semen Indonesia. Saya memiliki ketertarikan yang tinggi terhadap teknologi dan pengembangan perangkat lunak, serta terus berupaya memperluas wawasan dan keterampilan teknis di bidang ini. Dengan semangat belajar yang tinggi, saya senantiasa terbuka untuk mengeksplorasi konsep-konsep baru dalam dunia IT dan berkontribusi dalam menciptakan solusi yang inovatif dan berdampak.</p>
+    <img src="profile.jpg" alt="Foto Profil" style="max-width: 200px; border-radius: 50%;">
+</section>
+
+<section id="hobbies">
+    <h2>Hobi</h2>
+    <p>Saya memiliki beberapa hobi yang saya nikmati, antara lain:</p>
+    <ul>
+        <li>Bermusik</li>
+        <li>Membaca</li>
+        <li>Olahraga</li>
+    </ul>
+</section>
+
+<section id="projects">
+    <h2>Proyek</h2>
+    <div class="project">
+        <img src="project1.jpg" alt="Project1" class="project-image">
+        <h3>Project 1: Website E-commerce</h3>
+        <p> Ini adalah contoh website E-Commerce yang khusus menjual beras hasil petani dan langsung dari petani tanpa melalui distributor lain.</p>
+    </div>
+    <div class="project">
+        <img src="project2.jpg" alt="Project2" class="project-image">
+        <h3>Proyek 2: Aplikasi Resep Masakan</h3>
+        <p> Aplikasi ini membantu pengguna untuk menentukan menu masakan dan jadwal masakan yang ingin dimasak, keunggulan lainnya yaitu aplikasi ini dapat menghitung kalori masakan yang dimasak.</p>
+    </div>
+</section>
+
+<sec<section id="favorites">
+    <h2>Lagu dan Video Musik Favorit</h2>
+    <ul>
+        <li>
+            <h3>Lagu Favorit: "Judul Lagu"</h3>
+            <audio controls>
+                <source src="lagu-favorit.mp3" type="audio/mpeg">
+                Browser Anda tidak mendukung elemen audio.
+            </audio>
+        </li>
+        <li>
+            <h3>Video Musik Favorit: "Kidung-Ben Abraham Version"</h3>
+            <iframe width="560" height="315" src="https://youtu.be/80KAYa7-kuQ?si=bcjsofxBkx5n1l_2" frameborder="0" allowfullscreen></iframe>
+        </li>
+    </ul>
+</section>
+
+<section id="contact">
+    <h2>Kontak</h2>
+    <form action="#" method="post">
+        <input type="text" name="name" placeholder="Nama" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <textarea name="message" placeholder="Pesan" rows="5" required></textarea>
+        <button type="submit">Kirim</button>
+    </form>
+    <p>Informasi Kontak:</p>
+    <p>WhatsApp: <a href="https://wa.me/6285750229418">+6285750229418</a></p>
+    <p>Email: <a href="mailto:Julfa.Pratiwi23@Student.Uisi.ac.id">Julfa.Pratiwi23@Student.Uisi.ac.id</a></p>
+</section>
+
+<footer>
+    <p>&copy; 2025 Portofolio Pribadi. Semua hak dilindungi.</p>
+</footer>
+
+</body>
+</html>

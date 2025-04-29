@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Julfa Irnanda Pratiwi</title>
+    <style>
+        /* CSS Reset dan Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary-color: #e67e22;    /* Orange */
+            --secondary-color: #d35400;  /* Dark orange */
+            --accent-color: #16a085;     /* Green */
+            --light-color: #fdf2e9;      /* Cream */
+            --dark-color: #5d4037;       /* Brown */
+            --text-color: #333;
+            --text-light: #777;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #f9f9f9;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--secondary-color);
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header dan Navigasi */
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--light-color);
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 4rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        section:last-child {
+            border-bottom: none;
+        }
+
+        section h1, section h2 {
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--secondary-color);
+        }
+
+        /* Card Styles */
+        .card {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h3 {
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .card .date {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Media Section */
+        .media-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .media-card {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .media-card h3 {
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+        }
+
+        audio, video {
+            width: 100%;
+            border-radius: 8px;
+            margin-top: 1rem;
+        }
+
+        /* Gallery Styles */
+        .gallery {
+            margin-top: 3rem;
+        }
+
+        .gallery h2 {
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.03);
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s;
+        }
+
+        .gallery-item:hover .gallery-img {
+            transform: scale(1.1);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 0.5rem;
+            text-align: center;
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+
+        /* Guestbook Styles */
+        .guestbook-form {
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--secondary-color);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: var(--dark-color);
+        }
+
+        .guestbook-entries {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .guest-entry {
+            position: relative;
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .guest-entry:last-child {
+            border-bottom: none;
+        }
+
+        .guest-name {
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+
+        .guest-message {
+            margin-top: 0.5rem;
+        }
+
+        .guest-date {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            margin-top: 0.5rem;
+        }
+
+        .delete-btn {
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            background: var(--secondary-color);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s;
+        }
+
+        .delete-btn:hover {
+            background: #c0392b;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                background: var(--primary-color);
+                padding: 1rem;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                margin: 0.5rem 0;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .about-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">JULFA IRNANDA PRATIWI</div>
+                <ul class="nav-links">
+                    <li><a href="#about">Tentang Saya</a></li>
+                    <li><a href="#education">Pendidikan</a></li>
+                    <li><a href="#audio">Audio</a></li>
+                    <li><a href="#gallery">Galeri</a></li>
+                    <li><a href="#video">Video</a></li>
+                    <li><a href="#contact">Hubungi Saya</a></li>
+                    <li><a href="#guestbook">Buku Tamu</a></li>
+                </ul>
+                <div class="hamburger">☰</div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="about">
+            <h1>Tentang Saya</h1>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Saya adalah mahasiswi program studi Sistem Informasi yang memiliki minat besar dalam mengembangkan kemampuan di bidang pemrograman web dan desain UI/UX. Semangat untuk terus belajar dan memperluas keterampilan teknis menjadi motivasi utama saya dalam menapaki perjalanan di dunia teknologi dan desain digital.</p>
+                    <p>Minat saya dalam mempelajari berbagai disiplin ilmu Sistem Informasi sejalan dengan pesatnya perkembangan teknologi di Indonesia. Saya percaya bahwa pemahaman yang mendalam tentang teknologi, data, dan kebutuhan pengguna akan menjadi kunci dalam menciptakan solusi inovatif yang relevan dan berdaya guna bagi masyarakat.</p>
+                    <p>Dengan tekad kuat, saya berkomitmen untuk terus belajar, beradaptasi, dan berkontribusi dalam membangun masa depan teknologi yang lebih baik. Saya percaya bahwa kerja keras, rasa ingin tahu yang tinggi, dan semangat untuk berkembang akan membawa saya menuju tujuan besar yang saya impikan.</p>
+                    
+                    <h2 style="margin-top: 2rem;">Hobi</h2>
+                    <ul>
+                        <li>✓ Menyanyi</li>
+                        <li>✓ Menonton film</li>
+                        <li>✓ Mendengarkan musik</li>
+                        <li>✓ Traveling</li>
+                    </ul>
+                </div>
+                <img src="profile.jpg" alt="Profile" class="profile-img">
+            </div>
+        </section>
+
+        <section id="education">
+            <h1>Pendidikan</h1>
+            <div class="card">
+                <h2>S1 Sistem Informasi</h2>
+                <p class="date">Universitas Internasional Semen Indonesia | 2023 - sekarang</p>
+                <p>Saat ini sedang berkuliah dan memasuki semester 4</p>
+            </div>
+            <div class="card">
+                <h3>SMA Taruna Bumi Khatulistiwa</h3>
+                <p class="date">Jurusan IPA |2019 - 2022</p>
+            </div>
+        </section>
+
+        <section id="audio">
+            <h1>Audio</h1>
+            <div class="media-container">
+                <div class="media-card">
+                    <h3>Musik Favorit </h3>
+                    <p>Musik yang saat ini sangat saya sukai yaitu soundtrack dari sebuah film dengan judul lagu selalu ada di nadimu</p>
+                    <audio controls>
+                        <source src="audio.mp3.mp3" type="audio/mpeg">
+                        Browser Anda tidak mendukung elemen audio.
+                    </audio>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery">
+            <h1>Galeri Foto</h1>
+            <div class="gallery-container">
+                <div class="gallery-item">
+                    <img src="foto1.jpg" alt="Foto 1" class="gallery-img">
+                    <div class="gallery-caption">foto keluarga</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="foto2.jpg" alt="Foto 2" class="gallery-img">
+                    <div class="gallery-caption">foto makanan</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="foto3.jpg" alt="Foto 3" class="gallery-img">
+                    <div class="gallery-caption">Foto diri</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="video">
+            <h1>Video</h1>
+            <div class="media-container">
+                <div class="media-card">
+                    <h3>Video favorit</h3>
+                    <video controls>
+                        <source src="video.mp4" type="video/mp4">
+                        Browser Anda tidak mendukung elemen video.
+                    </video>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h1>Hubungi Saya</h1>
+            <form class="guestbook-form" id="contactForm">
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Pesan:</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="btn">Kirim Pesan</button>
+            </form>
+        </section>
+
+        <section id="guestbook">
+            <h1>Buku Tamu</h1>
+            <form class="guestbook-form" id="guestbookForm">
+                <div class="form-group">
+                    <label for="guest-name">Nama:</label>
+                    <input type="text" id="guest-name" name="guest-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="guest-message">Pesan:</label>
+                    <textarea id="guest-message" name="guest-message" required></textarea>
+                </div>
+                <button type="submit" class="btn">Tambah ke Buku Tamu</button>
+            </form>
+            
+            <div class="guestbook-entries" id="guestbookEntries">
+                <h2>Daftar Tamu</h2>
+                <!-- Entries akan ditambahkan di sini oleh JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Portofolio Julfa Irnanda Pratiwi. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation Toggle
+        document.querySelector('.hamburger').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                document.querySelector('.nav-links').classList.remove('active');
+            });
+        });
+
+        // Guestbook functionality
+        document.getElementById('guestbookForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('guest-name').value;
+            const message = document.getElementById('guest-message').value;
+            const date = new Date().toLocaleDateString('id-ID', {
+                day: 'numeric',
+                month: 'long',
+                year: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+            });
+            
+            // Create new guest entry
+            const entry = document.createElement('div');
+            entry.className = 'guest-entry';
+            entry.innerHTML = `
+                <button class="delete-btn" title="Hapus entri">×</button>
+                <div class="guest-name">${name}</div>
+                <div class="guest-message">${message}</div>
+                <div class="guest-date">${date}</div>
+            `;
+            
+            // Add to the top of entries
+            const entriesContainer = document.getElementById('guestbookEntries');
+            if (entriesContainer.children.length > 1) {
+                entriesContainer.insertBefore(entry, entriesContainer.children[1]);
+            } else {
+                entriesContainer.appendChild(entry);
+            }
+            
+            // Add event listener to the delete button
+            entry.querySelector('.delete-btn').addEventListener('click', function() {
+                if (confirm('Apakah Anda yakin ingin menghapus entri ini?')) {
+                    entry.remove();
+                }
+            });
+            
+            // Reset form
+            this.reset();
+            
+            // Show success message
+            alert('Terima kasih! Pesan Anda telah ditambahkan ke buku tamu.');
+        });
+
+        // Event delegation for delete buttons (handles dynamically added buttons)
+        document.getElementById('guestbookEntries').addEventListener('click', function(e) {
+            if (e.target.classList.contains('delete-btn')) {
+                if (confirm('Apakah Anda yakin ingin menghapus entri ini?')) {
+                    e.target.closest('.guest-entry').remove();
+                }
+            }
+        });
+
+        // Contact form functionality
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            // Here you would typically send the data to a server
+            console.log('Contact form submitted:', { email, message });
+            
+            // Show success message
+            alert('Terima kasih! Pesan Anda telah terkirim.');
+            
+            // Reset form
+            this.reset();
+        });
+
+        // Simple animation on scroll
+        window.addEventListener('scroll', function() {
+            const cards = document.querySelectorAll('.card, .media-card, .gallery-item');
+            cards.forEach(card => {
+                const cardPosition = card.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+                
+                if (cardPosition < screenPosition) {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }
+            });
+        });
+
+        // Initialize card styles for animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.card, .media-card, .gallery-item');
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            });
+        });
+    </script>
+</body>
+</html>

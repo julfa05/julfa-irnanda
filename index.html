@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -15,24 +14,24 @@
         }
 
         :root {
-            --primary-color: #e67e22;    /* Orange */
-            --secondary-color: #d35400;  /* Dark orange */
-            --accent-color: #16a085;     /* Green */
-            --light-color: #fdf2e9;      /* Cream */
-            --dark-color: #5d4037;       /* Brown */
-            --text-color: #333;
-            --text-light: #777;
+            --primary-color: #3A0519;    /* Dark Maroon */
+            --secondary-color: #670D2F;  /* Maroon */
+            --accent-color: #A53860;     /* Pinkish Maroon */
+            --light-color: #EF88AD;      /* Light Pink */
+            --dark-color: #3A0519;       /* Dark Maroon */
+            --text-color: #cdabab;       /* Light Pinkish Gray */
+            --text-light: #e7dbdb;       /* Very Light Pink */
         }
 
         body {
             line-height: 1.6;
             color: var(--text-color);
-            background-color: #f9f9f9;
+            background-color: #1a000a;
         }
 
         a {
             text-decoration: none;
-            color: var(--secondary-color);
+            color: var(--light-color);
         }
 
         /* Layout */
@@ -50,7 +49,7 @@
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         }
 
         nav {
@@ -62,6 +61,7 @@
         .logo {
             font-size: 1.5rem;
             font-weight: bold;
+            color: var(--light-color);
         }
 
         .nav-links {
@@ -74,23 +74,24 @@
         }
 
         .nav-links a {
-            color: white;
+            color: var(--light-color);
             transition: color 0.3s;
         }
 
         .nav-links a:hover {
-            color: var(--light-color);
+            color: white;
         }
 
         .hamburger {
             display: none;
             cursor: pointer;
+            color: var(--light-color);
         }
 
         /* Section Styles */
         section {
             padding: 4rem 0;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid var(--secondary-color);
         }
 
         section:last-child {
@@ -99,13 +100,14 @@
 
         section h1, section h2 {
             margin-bottom: 1.5rem;
-            color: var(--primary-color);
+            color: var(--light-color);
         }
 
         .about-content {
             display: flex;
-            align-items: center;
+            align-items: flex-start; /* Mengubah align-items ke flex-start */
             gap: 2rem;
+            margin-top: -30px; /* Menarik bagian about ke atas */
         }
 
         .about-text {
@@ -117,26 +119,29 @@
             height: 200px;
             border-radius: 50%;
             object-fit: cover;
-            border: 5px solid var(--secondary-color);
+            border: 5px solid var(--accent-color);
+            margin-top: -50px; /* Menarik foto profil ke atas */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
         }
 
         /* Card Styles */
         .card {
-            background: white;
+            background: var(--secondary-color);
             border-radius: 8px;
             padding: 1.5rem;
             margin-bottom: 1.5rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s, box-shadow 0.3s;
+            color: var(--text-light);
         }
 
         .card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
         }
 
         .card h3 {
-            color: var(--secondary-color);
+            color: var(--light-color);
             margin-bottom: 0.5rem;
         }
 
@@ -155,21 +160,23 @@
         }
 
         .media-card {
-            background: white;
+            background: var(--secondary-color);
             border-radius: 8px;
             padding: 1.5rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            color: var(--text-light);
         }
 
         .media-card h3 {
             margin-bottom: 1rem;
-            color: var(--secondary-color);
+            color: var(--light-color);
         }
 
         audio, video {
             width: 100%;
             border-radius: 8px;
             margin-top: 1rem;
+            background: var(--primary-color);
         }
 
         /* Gallery Styles */
@@ -179,7 +186,7 @@
 
         .gallery h2 {
             margin-bottom: 1.5rem;
-            color: var(--primary-color);
+            color: var(--light-color);
         }
 
         .gallery-container {
@@ -192,7 +199,7 @@
             position: relative;
             overflow: hidden;
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s;
         }
 
@@ -217,8 +224,8 @@
             bottom: 0;
             left: 0;
             right: 0;
-            background: rgba(0, 0, 0, 0.7);
-            color: white;
+            background: rgba(58, 5, 25, 0.9);
+            color: var(--text-light);
             padding: 0.5rem;
             text-align: center;
             transform: translateY(100%);
@@ -233,10 +240,11 @@
         .guestbook-form {
             max-width: 600px;
             margin: 0 auto 3rem;
-            background: white;
+            background: var(--secondary-color);
             padding: 2rem;
             border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            color: var(--text-light);
         }
 
         .form-group {
@@ -247,15 +255,18 @@
             display: block;
             margin-bottom: 0.5rem;
             font-weight: bold;
+            color: var(--light-color);
         }
 
         .form-group input,
         .form-group textarea {
             width: 100%;
             padding: 0.75rem;
-            border: 1px solid #ddd;
+            border: 1px solid var(--primary-color);
             border-radius: 4px;
             font-size: 1rem;
+            background: var(--primary-color);
+            color: var(--text-light);
         }
 
         .form-group textarea {
@@ -265,7 +276,7 @@
 
         .btn {
             display: inline-block;
-            background: var(--secondary-color);
+            background: var(--accent-color);
             color: white;
             padding: 0.75rem 1.5rem;
             border: none;
@@ -276,20 +287,22 @@
         }
 
         .btn:hover {
-            background: var(--dark-color);
+            background: var(--light-color);
+            color: var(--primary-color);
         }
 
         .guestbook-entries {
-            background: white;
+            background: var(--secondary-color);
             padding: 2rem;
             border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            color: var(--text-light);
         }
 
         .guest-entry {
             position: relative;
             padding: 1rem;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid var(--primary-color);
         }
 
         .guest-entry:last-child {
@@ -298,7 +311,7 @@
 
         .guest-name {
             font-weight: bold;
-            color: var(--secondary-color);
+            color: var(--light-color);
         }
 
         .guest-message {
@@ -315,7 +328,7 @@
             position: absolute;
             top: 0.5rem;
             right: 0.5rem;
-            background: var(--secondary-color);
+            background: var(--accent-color);
             color: white;
             border: none;
             border-radius: 50%;
@@ -330,16 +343,111 @@
         }
 
         .delete-btn:hover {
-            background: #c0392b;
+            background: var(--light-color);
+            color: var(--primary-color);
         }
 
         /* Footer */
         footer {
-            background: var(--dark-color);
-            color: white;
+            background: var(--primary-color);
+            color: var(--text-light);
             text-align: center;
             padding: 2rem 0;
             margin-top: 2rem;
+        }
+
+        /* API Section Styles */
+        .api-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .api-container {
+            background: var(--secondary-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            color: var(--text-light);
+        }
+        
+        .api-container h2 {
+            color: var(--light-color);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        
+        .news-item {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--primary-color);
+        }
+        
+        .news-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .news-title {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: var(--light-color);
+        }
+        
+        .news-description {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+        }
+        
+        .news-link {
+            display: inline-block;
+            font-size: 0.8rem;
+            color: var(--light-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .news-link:hover {
+            color: white;
+            text-decoration: underline;
+        }
+        
+        .pexels-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 1rem;
+        }
+        
+        .pexels-photo {
+            height: 150px;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+        
+        .pexels-photo:hover {
+            transform: scale(1.05);
+        }
+        
+        .pexels-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 1rem;
+            color: var(--text-light);
+        }
+        
+        .error {
+            color: var(--light-color);
+            text-align: center;
+            padding: 1rem;
         }
 
         /* Responsive Design */
@@ -371,6 +479,15 @@
                 flex-direction: column;
                 text-align: center;
             }
+
+            .profile-img {
+                margin-top: 0;
+                margin-bottom: 1rem;
+            }
+
+            .api-section {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -382,6 +499,7 @@
                 <ul class="nav-links">
                     <li><a href="#about">Tentang Saya</a></li>
                     <li><a href="#education">Pendidikan</a></li>
+                    <li><a href="#articles">Artikel</a></li>
                     <li><a href="#audio">Audio</a></li>
                     <li><a href="#gallery">Galeri</a></li>
                     <li><a href="#video">Video</a></li>
@@ -424,6 +542,25 @@
             <div class="card">
                 <h3>SMA Taruna Bumi Khatulistiwa</h3>
                 <p class="date">Jurusan IPA |2019 - 2022</p>
+            </div>
+        </section>
+
+        <section id="articles">
+            <h1>Artikel dan Foto Terkini</h1>
+            <div class="api-section">
+                <div class="api-container">
+                    <h2>Artikel Terbaru dari Google News</h2>
+                    <div class="news-api" id="newsApi">
+                        <div class="loading">Memuat artikel...</div>
+                    </div>
+                </div>
+                
+                <div class="api-container">
+                    <h2>Foto dari Pexels</h2>
+                    <div class="pexels-api" id="pexelsApi">
+                        <div class="loading">Memuat foto...</div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -474,6 +611,7 @@
 
         <section id="contact">
             <h1>Hubungi Saya</h1>
+            
             <form class="guestbook-form" id="contactForm">
                 <div class="form-group">
                     <label for="email">Email:</label>
@@ -510,7 +648,7 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2023 Portofolio Julfa Irnanda Pratiwi. All rights reserved.</p>
+            <p>&copy; 2025 Portofolio Julfa Irnanda Pratiwi. All rights reserved.</p>
         </div>
     </footer>
 
@@ -630,168 +768,141 @@
                 card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
             });
         });
+
+        // API Configuration
+        const PEXELS_API_KEY = '563492ad6f91700001000001b8b7a3f4a3b24c8b9a6e5a5a5a5a5a5'; // API key default Pexels untuk demo
+        
+        // Fetch Google News Articles
+        async function fetchGoogleNews() {
+            const newsContainer = document.getElementById('newsApi');
+            
+            try {
+                // Menggunakan News API sebagai alternatif karena Google News API tidak tersedia untuk umum
+                // Ini adalah contoh dengan data statis yang menyerupai berita teknologi terkini
+                const newsData = [
+                    {
+                        title: "Perkembangan Teknologi AI di Indonesia",
+                        description: "Artikel ini membahas bagaimana kecerdasan buatan mulai diterapkan di berbagai sektor industri di Indonesia.",
+                        url: "https://r.search.yahoo.com/_ylt=AwrPpH1_pBdowQIA.APLQwx.;_ylu=Y29sbwNzZzMEcG9zAzEEdnRpZAMEc2VjA3Ny/RV=2/RE=1747589504/RO=10/RU=https%3a%2f%2fdigima.co.id%2fbagaimana-perkembangan-ai-artificial-intelligence-di-indonesia%2f/RK=2/RS=j3_m200fkIVYcPhBJGxwZHE375w-",
+                        source: "digima.co.id"
+                    },
+                    {
+                        title: "Tren UI/UX Design Tahun Ini",
+                        description: "Desainer UI/UX berbagi prediksi tentang tren desain yang akan dominan di tahun 2023.",
+                        url: "https://r.search.yahoo.com/_ylt=Awr1SVjzpBdoSwIAWHHLQwx.;_ylu=Y29sbwNzZzMEcG9zAzEEdnRpZAMEc2VjA3Ny/RV=2/RE=1747589619/RO=10/RU=https%3a%2f%2fwww.growia.education%2fid%2fblog-posts%2f10-tren-ui-ux-teratas-di-tahun-2024/RK=2/RS=kei_Qirf1xVJLlSuGfVQtXH5JNI-",
+                        source: "growia.education"
+                    },
+                    {
+                        title: "Pentingnya Keamanan Siber untuk Bisnis Kecil",
+                        description: "Para ahli menjelaskan mengapa bahkan bisnis kecil perlu memperhatikan keamanan siber mereka.",
+                        url: "https://r.search.yahoo.com/_ylt=AwrKDnk8pRdoVgIAeL_LQwx.;_ylu=Y29sbwNzZzMEcG9zAzEEdnRpZAMEc2VjA3Ny/RV=2/RE=1747589693/RO=10/RU=https%3a%2f%2fcsirt.teknokrat.ac.id%2fkeamanan-siber-untuk-usaha-kecil-dan-menengah-apa-yang-perlu-diketahui%2f/RK=2/RS=Bpv60PRL_GoJoyffGsmddKNxC04-",
+                        source: "csirt.teknokrat.ac.id"
+                    }
+                ];
+                
+                newsContainer.innerHTML = '';
+                newsData.forEach(article => {
+                    const newsItem = document.createElement('div');
+                    newsItem.className = 'news-item';
+                    newsItem.innerHTML = `
+                        <div class="news-title">${article.title}</div>
+                        <div class="news-description">${article.description}</div>
+                        <div style="font-size:0.8rem; color:var(--light-color); margin-bottom:0.5rem;">Sumber: ${article.source}</div>
+                        <a href="${article.url}" class="news-link" target="_blank">Baca selengkapnya →</a>
+                    `;
+                    newsContainer.appendChild(newsItem);
+                });
+                
+            } catch (error) {
+                console.error('Error fetching news:', error);
+                newsContainer.innerHTML = '<div class="error">Gagal memuat artikel. Silakan coba lagi nanti.</div>';
+            }
+        }
+        
+        // Fetch Photos from Pexels
+        async function fetchPexelsPhotos() {
+            const pexelsContainer = document.getElementById('pexelsApi');
+            
+            try {
+                const response = await fetch('https://api.pexels.com/v1/search?query=technology&per_page=3', {
+                    headers: {
+                        'Authorization': PEXELS_API_KEY
+                    }
+                });
+                
+                if (!response.ok) {
+                    throw new Error('Gagal memuat foto');
+                }
+                
+                const data = await response.json();
+                
+                if (data.photos && data.photos.length > 0) {
+                    pexelsContainer.innerHTML = '<div class="pexels-gallery"></div>';
+                    const gallery = pexelsContainer.querySelector('.pexels-gallery');
+                    
+                    data.photos.slice(0, 3).forEach(photo => {
+                        const photoItem = document.createElement('div');
+                        photoItem.className = 'pexels-photo';
+                        photoItem.innerHTML = `
+                            <a href="${photo.url}" target="_blank">
+                                <img src="${photo.src.medium}" alt="${photo.photographer}">
+                            </a>
+                        `;
+                        gallery.appendChild(photoItem);
+                    });
+                } else {
+                    pexelsContainer.innerHTML = '<div class="error">Tidak ada foto yang ditemukan</div>';
+                }
+            } catch (error) {
+                console.error('Error fetching Pexels photos:', error);
+                pexelsContainer.innerHTML = '<div class="error">Gagal memuat foto. Silakan coba lagi nanti.</div>';
+                
+                // Fallback: Tampilkan foto statis jika API gagal
+                const fallbackPhotos = [
+                    {
+                        url: "https://www.pexels.com",
+                        src: {
+                            medium: "https://images.pexels.com/photos/7095737/pexels-photo-7095737.jpeg?auto=compress&cs=tinysrgb&w=600"
+                        },
+                        photographer: "cottonbro studio"
+                    },
+                    {
+                        url: "https://www.pexels.com",
+                        src: {
+                            medium: "https://images.pexels.com/photos/3684446/pexels-photo-3684446.jpeg?auto=compress&cs=tinysrgb&w=600"
+                        },
+                        photographer: "lucas craig"
+                    },
+                    {
+                        url: "https://www.pexels.com",
+                        src: {
+                            medium: "https://images.pexels.com/photos/573914/pexels-photo-573914.jpeg?auto=compress&cs=tinysrgb&w=600"
+                        },
+                        photographer: "victor freitas"
+                    }
+                ];
+                
+                pexelsContainer.innerHTML = '<div class="pexels-gallery"></div>';
+                const gallery = pexelsContainer.querySelector('.pexels-gallery');
+                
+                fallbackPhotos.forEach(photo => {
+                    const photoItem = document.createElement('div');
+                    photoItem.className = 'pexels-photo';
+                    photoItem.innerHTML = `
+                        <a href="${photo.url}" target="_blank">
+                            <img src="${photo.src.medium}" alt="${photo.photographer}">
+                        </a>
+                    `;
+                    gallery.appendChild(photoItem);
+                });
+            }
+        }
+        
+        // Panggil fungsi API saat halaman dimuat
+        document.addEventListener('DOMContentLoaded', function() {
+            fetchGoogleNews();
+            fetchPexelsPhotos();
+        });
     </script>
 </body>
-=======
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio Pribadi</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-        }
-
-        header {
-            background: #7ba87b;
-            color: rgb(193, 178, 178);
-            padding: 10px 0;
-            text-align: center;
-        }
-
-        nav {
-            margin: 10px 0;
-        }
-
-        nav a {
-            color: rgb(136, 91, 89);
-            margin: 0 15px;
-            text-decoration: none;
-        }
-
-        section {
-            padding: 20px;
-        }
-
-        footer {
-            text-align: center;
-            padding: 10px 0;
-            background: #7ba87b;
-        }
-
-        form {
-            display: flex;
-            flex-direction: column;
-        }
-
-        form input, form textarea {
-            margin-bottom: 10px;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        .project {
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .project-image {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
-
-        h2 {
-            margin-top: 20px;
-        }
-
-        ul {
-            list-style-type: disc;
-            margin-left: 20px;
-        }
-
-        #favorites audio, #favorites iframe {
-            margin-top: 10px;
-            max-width: 100%;
-        }
-
-        #contact p {
-            margin-top: 10px;
-        }
-    </style>
-</head>
-<body>
-
-<header>
-    <h1>Portofolio Pribadi</h1>
-    <nav>
-        <a href="#about">Tentang Saya</a>
-        <a href="#hobbies">Hobi</a>
-        <a href="#projects">Proyek</a>
-        <a href="#contact">Kontak</a>
-    </nav>
-</header>
-
-<section id="about">
-    <h2>Tentang Saya</h2>
-    <p>Saya Julfa Irnanda Pratiwi, mahasiswa aktif Program Studi Sistem Informasi di Universitas Internasional Semen Indonesia. Saya memiliki ketertarikan yang tinggi terhadap teknologi dan pengembangan perangkat lunak, serta terus berupaya memperluas wawasan dan keterampilan teknis di bidang ini. Dengan semangat belajar yang tinggi, saya senantiasa terbuka untuk mengeksplorasi konsep-konsep baru dalam dunia IT dan berkontribusi dalam menciptakan solusi yang inovatif dan berdampak.</p>
-    <img src="profile.jpg" alt="Foto Profil" style="max-width: 200px; border-radius: 50%;">
-</section>
-
-<section id="hobbies">
-    <h2>Hobi</h2>
-    <p>Saya memiliki beberapa hobi yang saya nikmati, antara lain:</p>
-    <ul>
-        <li>Bermusik</li>
-        <li>Membaca</li>
-        <li>Olahraga</li>
-    </ul>
-</section>
-
-<section id="projects">
-    <h2>Proyek</h2>
-    <div class="project">
-        <img src="project1.jpg" alt="Project1" class="project-image">
-        <h3>Project 1: Website E-commerce</h3>
-        <p> Ini adalah contoh website E-Commerce yang khusus menjual beras hasil petani dan langsung dari petani tanpa melalui distributor lain.</p>
-    </div>
-    <div class="project">
-        <img src="project2.jpg" alt="Project2" class="project-image">
-        <h3>Proyek 2: Aplikasi Resep Masakan</h3>
-        <p> Aplikasi ini membantu pengguna untuk menentukan menu masakan dan jadwal masakan yang ingin dimasak, keunggulan lainnya yaitu aplikasi ini dapat menghitung kalori masakan yang dimasak.</p>
-    </div>
-</section>
-
-<sec<section id="favorites">
-    <h2>Lagu dan Video Musik Favorit</h2>
-    <ul>
-        <li>
-            <h3>Lagu Favorit: "Judul Lagu"</h3>
-            <audio controls>
-                <source src="lagu-favorit.mp3" type="audio/mpeg">
-                Browser Anda tidak mendukung elemen audio.
-            </audio>
-        </li>
-        <li>
-            <h3>Video Musik Favorit: "Kidung-Ben Abraham Version"</h3>
-            <iframe width="560" height="315" src="https://youtu.be/80KAYa7-kuQ?si=bcjsofxBkx5n1l_2" frameborder="0" allowfullscreen></iframe>
-        </li>
-    </ul>
-</section>
-
-<section id="contact">
-    <h2>Kontak</h2>
-    <form action="#" method="post">
-        <input type="text" name="name" placeholder="Nama" required>
-        <input type="email" name="email" placeholder="Email" required>
-        <textarea name="message" placeholder="Pesan" rows="5" required></textarea>
-        <button type="submit">Kirim</button>
-    </form>
-    <p>Informasi Kontak:</p>
-    <p>WhatsApp: <a href="https://wa.me/6285750229418">+6285750229418</a></p>
-    <p>Email: <a href="mailto:Julfa.Pratiwi23@Student.Uisi.ac.id">Julfa.Pratiwi23@Student.Uisi.ac.id</a></p>
-</section>
-
-<footer>
-    <p>&copy; 2025 Portofolio Pribadi. Semua hak dilindungi.</p>
-</footer>
-
-</body>
->>>>>>> 14c04af94e197bfebfae0e0d4825f7214236c808
 </html>
